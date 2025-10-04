@@ -1,21 +1,28 @@
-# Explainable Deep Learning Assignment
+## Explainable Deep Learning (Grad-CAM & Variants)
 
-This assignment explores **explainability in deep learning models** using Grad-CAM and its variants. The goal is to visualize where models focus their attention when making predictions.
+**Course:** AIPI 590 – Emerging Trends in Explainable AI (Fall 2025)  
+**Professor:** Dr. Brinnae Bent  
+**Author:** Eric Ortega Rodriguez  
+**Case Domain:** Traffic Sign Classification & Explainability  
+**Deadline:** October 6, 2025 – 11:30 AM  
 
+### Project Overview
+This project explores model explainability in **computer vision** using pretrained deep learning models.  
+The goal is to visualize what regions a model focuses on when classifying **road signs**, a safety-critical task for autonomous vehicles.
 
-## Folder Structure
-assignments/explainable_deep_learning/
-├── explainable_deep_learning.ipynb   # Colab notebook (main analysis)
-├── images/                           # Input test images (at least 5)
-├── results/                          # GradCAM visualizations
-└── README.md                         # Assignment description
+### Dataset
+Five custom traffic sign images were used:
+- 🛑 Stop  
+- 🚫 No Entry  
+- 🚸 Pedestrian Crossing  
+- ⚠️ Yield  
+- 🏁 Speed Limit 30  
 
-## Task
-- Select a pretrained deep learning model (**ResNet-50** is used here).
-- Load at least **5 test images** from the `images/` folder.
-- Apply **three explainability methods**:
-  - Grad-CAM
-  - Grad-CAM++
-  - XGradCAM (or another variant)
-- Save and compare the heatmaps in the `results/` folder.
-- Provide a short reflection on the insights gained.
+All images are stored in the `/images` folder and resized to **224×224 px** for model input.
+
+### Implementation Summary
+1. **Model:** Pretrained ResNet-50 (`torchvision.models.resnet50`)  
+2. **Explainability Methods:** Grad-CAM, Grad-CAM++, Score-CAM (using `pytorch-grad-cam`)  
+3. **Visualization:** Overlay heatmaps highlighting regions of attention  
+4. **Output:** Saved in `/results`
+
