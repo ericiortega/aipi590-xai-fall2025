@@ -22,20 +22,10 @@ Five custom traffic-sign images:
 - Speed Limit 30  
 - Yield
 
-Images are in `assignments/explainable_deep_learning/images/`.  
-The model input is resized/normalized by the official ResNet-50 transforms; overlays are resized back to the original image size for visualization.
-
-
 ## Methods Used
 - **Grad-CAM** — coarse, region-level focus
-- **Grad-CAM++** — tighter focus on class-defining parts (e.g., text/digits)
+- **Grad-CAM++** — tighter focus on class-defining parts like on text/digits
 - **LayerCAM** — crisp edges and shape boundaries (octagon/triangle/rectangle)
-
-Library: [`pytorch-grad-cam`].
-
-Target layer: `model.layer4[-1]` (last conv block).  
-Targets: auto top-1 prediction per image (no manual class IDs).
-
 
 ## What I Implemented
 - Load pretrained **ResNet-50** (ImageNet weights), no fine-tuning
